@@ -17,10 +17,7 @@ namespace Compilador
         {
             InitializeComponent();
             textBoxRuta.Enabled = false;       
-            
-            
-
-            
+    
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -96,6 +93,8 @@ namespace Compilador
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+
+
             string[] texto = console.Text.Split('\n'); //Salto de linea
             int contadorLineas = 1;
             Entrada.Tipo = "Consola";
@@ -106,9 +105,10 @@ namespace Compilador
                 lineaInicial.Append(contadorLineas + "->" + linea + Environment.NewLine);
                 contadorLineas++;
             }
+            registroCarga.Clear();
             registroCarga.Text = lineaInicial.ToString();
-
-
+            console.Clear();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,6 +124,7 @@ namespace Compilador
             }
             CrearPestañaDeComponentes();
             CrearPestañaDeErrores();
+            Entrada.LimpiarLineas();
 
         }
 
@@ -197,6 +198,11 @@ namespace Compilador
         private void Datos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

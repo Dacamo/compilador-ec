@@ -185,7 +185,10 @@
             // 
             // Datos
             // 
+<<<<<<< HEAD
             this.Datos.Controls.Add(this.button2);
+=======
+>>>>>>> f746688471ab4f48441cd231185e6cf2c0db1e07
             this.Datos.Controls.Add(this.button1);
             this.Datos.Controls.Add(this.radioButton1);
             this.Datos.Controls.Add(this.file);
@@ -202,6 +205,7 @@
             this.Datos.UseVisualStyleBackColor = true;
             this.Datos.Click += new System.EventHandler(this.Datos_Click);
             // 
+<<<<<<< HEAD
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(579, 406);
@@ -212,6 +216,8 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+=======
+>>>>>>> f746688471ab4f48441cd231185e6cf2c0db1e07
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,7 +255,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Datos;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button2;
+=======
+>>>>>>> f746688471ab4f48441cd231185e6cf2c0db1e07
     }
 }
 

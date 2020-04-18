@@ -141,7 +141,7 @@ namespace Compilador
 
         }
 
-        private TabPage CrearPestañaDeComponentes()
+        private void CrearPestañaDeComponentes()
         {
             TabPage newPage = new TabPage("Tabla_componentes");
             tabControl1.TabPages.Add(newPage);
@@ -175,7 +175,6 @@ namespace Compilador
             newPage.Controls.Add(dataGridSimbolos);
             newPage.Controls.Add(tablaDummys);
             newPage.Controls.Add(dataGridDummys);
-            return newPage;
         }
 
         private void CrearPestañaDeErrores()

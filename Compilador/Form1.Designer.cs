@@ -44,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Datos = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.consola.SuspendLayout();
             this.file.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -184,6 +185,7 @@
             // 
             // Datos
             // 
+            this.Datos.Controls.Add(this.button2);
             this.Datos.Controls.Add(this.button1);
             this.Datos.Controls.Add(this.radioButton1);
             this.Datos.Controls.Add(this.file);
@@ -199,6 +201,16 @@
             this.Datos.Text = "Datos";
             this.Datos.UseVisualStyleBackColor = true;
             this.Datos.Click += new System.EventHandler(this.Datos_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(579, 406);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Reiniciar Datos";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Form1
             // 
@@ -237,6 +249,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Datos;
+        private System.Windows.Forms.Button button2;
     }
 }
 

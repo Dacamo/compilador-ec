@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 
 namespace Compilador.ManejadorErrores
 {
@@ -48,6 +49,11 @@ namespace Compilador.ManejadorErrores
         public static bool HayErrores()
         {
             return ObtenerTodosErrores().Count > 0;
+        }
+
+        public static void BorrarTablaErrores()
+        {
+            errores.Clear();
         }
     }
 }

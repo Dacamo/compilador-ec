@@ -1,4 +1,6 @@
 ﻿using Compilador.Clases;
+using Compilador.ManejadorErrores;
+using Compilador.TablaSimbolos;
 using Compilador.Transversal;
 using System;
 using System.IO;
@@ -94,6 +96,7 @@ namespace Compilador
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            BorrarPestañas();
             string[] texto = console.Text.Split('\n'); //Salto de linea
             int contadorLineas = 1;
             Entrada.Tipo = "Consola";
@@ -202,6 +205,9 @@ namespace Compilador
             {
                 tabControl1.TabPages.Remove(tabControl1.TabPages[1]);
                 tabControl1.TabPages.Remove(tabControl1.TabPages[1]);
+                TablaSimbolos.TablaSimbolos.Limpiar();
+                TablaDummys.Limpiar();
+                GestorErrores.BorrarTablaErrores();
             }
         }
         private void Datos_Click(object sender, EventArgs e)
@@ -212,6 +218,13 @@ namespace Compilador
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            BorrarPestañas();
+            registroCarga.Clear();
+            textBoxRuta.Clear();     
         }
     }
 }

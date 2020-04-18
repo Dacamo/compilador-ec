@@ -20,7 +20,7 @@ namespace Compilador.Transversal
             retorno.Append("Lexema: " + Lexema + "\n");
             retorno.Append("Numero de Linea: " + NumeroLinea + "\n");
             retorno.Append("Posicion Inicial: " + PosicionInicial + "\n");
-            retorno.Append("Poscicion Final: " + PosicionFinal + "\n");
+            retorno.Append("Posicion Final: " + PosicionFinal + "\n");
 
             return retorno.ToString();
         }

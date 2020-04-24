@@ -8,6 +8,6 @@ namespace Compilador.Transversal
 {
     public enum TipoComponente
     {
-        SIMBOLO, DUMMY
+        SIMBOLO, DUMMY, PALABRA_RESERVADA, LITERAL
     }
 }

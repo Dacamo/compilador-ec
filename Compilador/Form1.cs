@@ -161,6 +161,8 @@ namespace Compilador
                 Height = 151,
                 PreferredColumnWidth = 104
             };
+
+           
             Label tablaSimbolos = new Label()
             {
                 Text = "Tabla de simbolos",

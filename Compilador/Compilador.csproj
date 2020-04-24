@@ -61,7 +61,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TablaSimbolos\TablaDummys.cs" />
+    <Compile Include="TablaSimbolos\TablaLiterales.cs" />
     <Compile Include="TablaSimbolos\TablaMaestra.cs" />
+    <Compile Include="TablaSimbolos\TablaPalabrasReservadas.cs" />
     <Compile Include="TablaSimbolos\TablaSimbolos.cs" />
     <Compile Include="Transversal\Categoria.cs" />
     <Compile Include="Transversal\ComponenteLexico.cs" />

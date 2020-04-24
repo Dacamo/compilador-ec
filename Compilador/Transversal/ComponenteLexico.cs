@@ -10,6 +10,30 @@ namespace Compilador.Transversal
         public int PosicionInicial { get; set; }
         public int PosicionFinal { get; set; }
         public TipoComponente Tipo { get; set; }
+        
+        public static ComponenteLexico crear(string lexema, Categoria categoria, int numeroLinea, int posicionInicial, int posicionFinal)
+        {
+            ComponenteLexico retorno = new ComponenteLexico();
+            retorno.Lexema = lexema;
+            retorno.Categoria = categoria;
+            retorno.NumeroLinea = numeroLinea;
+            retorno.PosicionFinal = posicionFinal;
+            retorno.PosicionInicial = posicionInicial;
+
+            return retorno;
+        }
+
+        public static ComponenteLexico crear(string lexema, Categoria categoria)
+        {
+            ComponenteLexico retorno = new ComponenteLexico();
+            retorno.Lexema = lexema;
+            retorno.Categoria = categoria;
+            retorno.NumeroLinea = 0;
+            retorno.PosicionFinal = 0;
+            retorno.PosicionInicial = 0;
+
+            return retorno;
+        }
 
         public override string ToString()
         {

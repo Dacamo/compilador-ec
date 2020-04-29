@@ -118,6 +118,7 @@ namespace Compilador
             BorrarPestañas();
             try
             {
+                TablaPalabrasReservadas.inicializar();
                 AnalizadorLexico anaLex = new AnalizadorLexico();
                 anaLex.Analizar();
             }
@@ -127,8 +128,54 @@ namespace Compilador
             }
             CrearPestañaDeComponentes();
             CrearPestañaDeErrores();
+            CrearPestañaDePalabrasReservadas();
+            CrearPestañaDeLiterales();
             Entrada.LimpiarLineas();
 
+        }
+
+        private void CrearPestañaDePalabrasReservadas()
+        {
+            TabPage newPage = new TabPage("Tabla_Palabras_Reservadas");
+            tabControl1.TabPages.Add(newPage);
+
+            DataGrid dataGridPalabrasReservadas = new DataGrid()
+            {
+                DataSource = TablaPalabrasReservadas.ObtenerTodosLosSimbolos(),
+                Location = new System.Drawing.Point(16, 78),
+                Width = 656,
+                Height = 150,
+                PreferredColumnWidth = 104
+            };
+            Label tablaPalabrasReservadas = new Label()
+            {
+                Text = "Tabla de palabras reservadas",
+                Location = new System.Drawing.Point(13, 33)
+            };
+            newPage.Controls.Add(tablaPalabrasReservadas);
+            newPage.Controls.Add(dataGridPalabrasReservadas);
+        }
+
+        private void CrearPestañaDeLiterales()
+        {
+            TabPage newPage = new TabPage("Tabla_Literales");
+            tabControl1.TabPages.Add(newPage);
+
+            DataGrid dataGridLiterales = new DataGrid()
+            {
+                DataSource = TablaLiterales.ObtenerTodosLosSimbolos(),
+                Location = new System.Drawing.Point(16, 78),
+                Width = 656,
+                Height = 150,
+                PreferredColumnWidth = 104
+            };
+            Label tablaPalabrasLiterales = new Label()
+            {
+                Text = "Tabla de Literales",
+                Location = new System.Drawing.Point(13, 33)
+            };
+            newPage.Controls.Add(tablaPalabrasLiterales);
+            newPage.Controls.Add(dataGridLiterales);
         }
 
         private void Tabla_Componentes_Click(object sender, EventArgs e)
@@ -145,6 +192,7 @@ namespace Compilador
         {
             TabPage newPage = new TabPage("Tabla_componentes");
             tabControl1.TabPages.Add(newPage);
+            
             DataGrid dataGridSimbolos = new DataGrid()
             {
                 DataSource = TablaSimbolos.TablaSimbolos.ObtenerTodosLosSimbolos(),
@@ -153,6 +201,7 @@ namespace Compilador
                 Height = 145,
                 PreferredColumnWidth = 104
             };
+
             DataGrid dataGridDummys = new DataGrid()
             {
                 DataSource = TablaSimbolos.TablaDummys.ObtenerTodosLosSimbolos(),
@@ -161,8 +210,6 @@ namespace Compilador
                 Height = 151,
                 PreferredColumnWidth = 104
             };
-
-           
             Label tablaSimbolos = new Label()
             {
                 Text = "Tabla de simbolos",
@@ -177,6 +224,7 @@ namespace Compilador
             newPage.Controls.Add(dataGridSimbolos);
             newPage.Controls.Add(tablaDummys);
             newPage.Controls.Add(dataGridDummys);
+          
         }
 
         private void CrearPestañaDeErrores()

@@ -23,6 +23,7 @@ namespace Compilador.Transversal
             return retorno;
         }
 
+        //para las palabras reservadas
         public static ComponenteLexico crear(string lexema, Categoria categoria)
         {
             ComponenteLexico retorno = new ComponenteLexico();

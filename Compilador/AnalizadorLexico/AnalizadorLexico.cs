@@ -231,13 +231,8 @@ namespace Compilador
                 else if (estadoActual == 5)
                 {
                     DevolverPuntero();
-                    continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.VALOR_ENVIO;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    continuarAnalisis = true;              
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.VALOR_ENVIO, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -609,12 +604,7 @@ namespace Compilador
                 {
                     DevolverPuntero();
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.FARENHEIT;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.FARENHEIT, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -776,23 +766,13 @@ namespace Compilador
                 {
                     DevolverPuntero();
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.RANKINE;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.RANKINE, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
-                    limpiarLexema();
-                    
+                    limpiarLexema();            
                 }
-                /*else if (estadoActual == 53)
-                {
-                    estadoActual = 81;
-                    
-                }*/
+               
                 else if (estadoActual == 54)
                 {
                     LeerSiguienteCaracter();
@@ -843,12 +823,7 @@ namespace Compilador
                 else if (estadoActual == 59)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.KELVIN;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.KELVIN, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -871,12 +846,7 @@ namespace Compilador
                 else if (estadoActual == 64)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.VALOR_RETORNO;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.VALOR_RETORNO, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -885,12 +855,7 @@ namespace Compilador
                 else if (estadoActual == 65)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.SEPARADOR;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.SEPARADOR, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -899,12 +864,7 @@ namespace Compilador
                 else if (estadoActual == 66)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.OUT;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.OUT, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -913,12 +873,7 @@ namespace Compilador
                 else if (estadoActual == 72)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.STATUS;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.STATUS, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -927,12 +882,7 @@ namespace Compilador
                 else if (estadoActual == 73)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.SUCCESS;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.SUCCESS, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -941,12 +891,7 @@ namespace Compilador
                 else if (estadoActual == 74)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.RESTART;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.RESTART, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -956,26 +901,13 @@ namespace Compilador
                 else if (estadoActual == 77)
                 {
                     continuarAnalisis = false;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.EOF;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero;
-                    componenteLexico.PosicionFinal = 5;
-                    //estadoActual = 0;
-                    //MensajeRetorno(componenteLexico);
-                    //TablaMaestra.SincronizarSimbolo(componenteLexico);
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.EOF, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     limpiarLexema();
                 }
                 else if (estadoActual == 78)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.IN;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.IN, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -984,12 +916,7 @@ namespace Compilador
                 else if (estadoActual == 67)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.ON;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.ON, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -998,12 +925,7 @@ namespace Compilador
                 else if (estadoActual == 68)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.OFF;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.OFF, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -1012,12 +934,7 @@ namespace Compilador
                 else if (estadoActual == 69)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.UP;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.UP, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -1026,12 +943,7 @@ namespace Compilador
                 else if (estadoActual == 70)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.DOWN;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.DOWN, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -1040,12 +952,7 @@ namespace Compilador
                 else if (estadoActual == 71)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.GET;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.GET, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -1054,12 +961,7 @@ namespace Compilador
                 else if (estadoActual == 75)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.FAIL;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.FAIL, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -1068,13 +970,8 @@ namespace Compilador
                 }
                 else if (estadoActual == 76)
                 {
-                    continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.CENTIGRADOS;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    continuarAnalisis = true;;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.CENTIGRADOS, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -1083,12 +980,7 @@ namespace Compilador
                 else if (estadoActual == 79)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.START;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.START, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
@@ -1097,45 +989,12 @@ namespace Compilador
                 else if (estadoActual == 80)
                 {
                     continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.SHUTDOWN;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear(lexema, Categoria.SHUTDOWN, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
                     TablaMaestra.SincronizarSimbolo(componenteLexico);
                     limpiarLexema();
                 }
-                /*else if (estadoActual == 82)
-                {
-                    continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.FARENHEIT;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
-                    estadoActual = 0;
-                    MensajeRetorno(componenteLexico);
-                    TablaMaestra.SincronizarSimbolo(componenteLexico);
-                    limpiarLexema();
-                }
-                else if (estadoActual == 81)
-                {
-                    continuarAnalisis = true;
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.RANKINE;
-                    componenteLexico.Lexema = lexema;
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
-                    estadoActual = 0;
-                    MensajeRetorno(componenteLexico);
-                    TablaMaestra.SincronizarSimbolo(componenteLexico);
-                    limpiarLexema();
-                }*/
 
                 //stopper
                 else if (estadoActual == 63)
@@ -1149,7 +1008,7 @@ namespace Compilador
 
                     GestorErrores.Reportar(error);
 
-                    throw new Exception("Se ha presentado un error de tipo STOPPER durante el analisis lexico. Por favor verifique la consola de errores");
+                    throw new Exception("Se ha presentado un error de tipo STOPPER durante el análisis lexico. Por favor verifique la consola de errores");
                 }
                 else if (estadoActual == 83)
                 {
@@ -1165,12 +1024,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.IN;
-                    componenteLexico.Lexema = "IN";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("IN", Categoria.IN, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1192,12 +1046,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.OUT;
-                    componenteLexico.Lexema = "OUT";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("OUT", Categoria.OUT, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1219,12 +1068,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.OFF;
-                    componenteLexico.Lexema = "OFF";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("OFF", Categoria.OFF, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1246,12 +1090,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.UP;
-                    componenteLexico.Lexema = "UP";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("UP", Categoria.UP, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1273,12 +1112,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.DOWN;
-                    componenteLexico.Lexema = "DOWN";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("DOWN", Categoria.DOWN, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1300,12 +1134,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.GET;
-                    componenteLexico.Lexema = "GET";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("GET", Categoria.GET, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1327,12 +1156,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.START;
-                    componenteLexico.Lexema = "START";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("START", Categoria.START, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1354,12 +1178,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.STATUS;
-                    componenteLexico.Lexema = "STATUS";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("STATUS", Categoria.STATUS, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1380,13 +1199,8 @@ namespace Compilador
                         "Leí " + lexema + " y se esperaba un SHUTDOWN",
                         "asegurese de que la instrucción esté escrita correctamente");
 
-                    GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.SHUTDOWN;
-                    componenteLexico.Lexema = "SHUTDOWN";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    GestorErrores.Reportar(error);                 
+                    componenteLexico = ComponenteLexico.crear("SHUTDOWN", Categoria.SHUTDOWN, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1407,13 +1221,8 @@ namespace Compilador
                         "Leí " + lexema + " y se esperaba un SUCCESS",
                         "asegurese de que la instrucción esté escrita correctamente");
 
-                    GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.SUCCESS;
-                    componenteLexico.Lexema = "SUCCESS";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    GestorErrores.Reportar(error);                
+                    componenteLexico = ComponenteLexico.crear("SUCCESS", Categoria.SUCCESS, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1434,13 +1243,8 @@ namespace Compilador
                         "Leí " + lexema + " y se esperaba un RESTART",
                         "asegurese de que la instrucción esté escrita correctamente");
 
-                    GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.RESTART;
-                    componenteLexico.Lexema = "RESTART";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    GestorErrores.Reportar(error);                 
+                    componenteLexico = ComponenteLexico.crear("RESTART", Categoria.RESTART, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1461,13 +1265,8 @@ namespace Compilador
                         "Leí " + lexema + " y se esperaba un FAIL",
                         "asegurese de que la instrucción esté escrita correctamente");
 
-                    GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.FAIL;
-                    componenteLexico.Lexema = "FAIL";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    GestorErrores.Reportar(error);                  
+                    componenteLexico = ComponenteLexico.crear("FAIL", Categoria.FAIL, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);
@@ -1489,12 +1288,7 @@ namespace Compilador
                         "asegurese de que la instrucción esté escrita correctamente");
 
                     GestorErrores.Reportar(error);
-                    componenteLexico = new ComponenteLexico();
-                    componenteLexico.Categoria = Categoria.VALOR_ENVIO;
-                    componenteLexico.Lexema = "000";
-                    componenteLexico.NumeroLinea = NumeroLineaActual;
-                    componenteLexico.PosicionInicial = Puntero - lexema.Length;
-                    componenteLexico.PosicionFinal = Puntero - 1;
+                    componenteLexico = ComponenteLexico.crear("000", Categoria.VALOR_ENVIO, NumeroLineaActual, Puntero - lexema.Length, Puntero - 1);
                     componenteLexico.Tipo = TipoComponente.DUMMY;
                     estadoActual = 0;
                     MensajeRetorno(componenteLexico);

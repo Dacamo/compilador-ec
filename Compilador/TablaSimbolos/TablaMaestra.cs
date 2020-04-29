@@ -12,15 +12,13 @@ namespace Compilador.TablaSimbolos
 
                 switch (componente.Tipo)
                 {
-                    
                     case TipoComponente.SIMBOLO:
                         
                         //tabla de simbolos completa
-                        if ( componente.Categoria.Equals(Categoria.VARIABLE ))
+                        if ( componente.Categoria.Equals(Categoria.VARIABLE))
                         {
                             TablaSimbolos.Agregar(componente);
                         }
-
                         // tabla de simbolos resumida
                         else
                         {
@@ -28,16 +26,12 @@ namespace Compilador.TablaSimbolos
                             TablaLiterales.Agregar(componente);
                         }
                         break;
-
                     case TipoComponente.DUMMY:
                         TablaDummys.Agregar(componente);
                         break;
 
                     case TipoComponente.PALABRA_RESERVADA:
                         TablaPalabrasReservadas.Agregar(componente);
-                        break;
-                    case TipoComponente.LITERAL:
-                        TablaLiterales.Agregar(componente);
                         break;
                 }
             }

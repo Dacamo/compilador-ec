@@ -71,6 +71,7 @@ namespace Compilador.TablaSimbolos
         public static void Limpiar()
         {
             simbolos.Clear();
+            tabla.Clear();
         }
     }
 }

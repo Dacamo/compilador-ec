@@ -45,7 +45,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Datos = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.consola.SuspendLayout();
             this.file.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -186,7 +185,6 @@
             // 
             // Datos
             // 
-            this.Datos.Controls.Add(this.button3);
             this.Datos.Controls.Add(this.button2);
             this.Datos.Controls.Add(this.button1);
             this.Datos.Controls.Add(this.radioButton1);
@@ -213,16 +211,6 @@
             this.button2.Text = "Reiniciar Datos";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(53, 381);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "A LO BRUTO";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -262,7 +250,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Datos;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
     }
 }
 

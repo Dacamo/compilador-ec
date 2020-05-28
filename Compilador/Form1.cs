@@ -115,7 +115,7 @@ namespace Compilador
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BorrarPestañas();
+            /*BorrarPestañas();
             try
             {
                 TablaPalabrasReservadas.inicializar();
@@ -130,8 +130,59 @@ namespace Compilador
             CrearPestañaDeErrores();
             CrearPestañaDePalabrasReservadas();
             CrearPestañaDeLiterales();
-            Entrada.LimpiarLineas();
+            Entrada.LimpiarLineas();*/
 
+            /*BorrarPestañas();
+            TablaPalabrasReservadas.inicializar();
+            AnalizadorSintactico anaSin = new AnalizadorSintactico();
+            anaSin.Analizar();
+            CrearPestañaDeComponentes();
+            CrearPestañaDeErrores();
+            CrearPestañaDePalabrasReservadas();
+            CrearPestañaDeLiterales();
+            Entrada.LimpiarLineas();*/
+
+
+            /*try
+            {
+                BorrarPestañas();
+                TablaPalabrasReservadas.inicializar();
+                AnalizadorLexico anaLex = new AnalizadorLexico();
+                ComponenteLexico componente = anaLex.Analizar();
+
+                while (componente.Lexema != "@EOF@")
+                {
+                    componente = anaLex.Analizar();
+                }
+
+                CrearPestañaDeComponentes();
+                CrearPestañaDeErrores();
+                CrearPestañaDePalabrasReservadas();
+                CrearPestañaDeLiterales();
+                Entrada.LimpiarLineas();
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }*/
+
+            try
+            {
+                BorrarPestañas();
+                TablaPalabrasReservadas.inicializar();
+                AnalizadorSintactico anaSin = new AnalizadorSintactico();
+                anaSin.Analizar();
+
+                CrearPestañaDeComponentes();
+                CrearPestañaDeErrores();
+                CrearPestañaDePalabrasReservadas();
+                CrearPestañaDeLiterales();
+                Entrada.LimpiarLineas();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CrearPestañaDePalabrasReservadas()
@@ -254,8 +305,12 @@ namespace Compilador
             {
                 tabControl1.TabPages.Remove(tabControl1.TabPages[1]);
                 tabControl1.TabPages.Remove(tabControl1.TabPages[1]);
+                tabControl1.TabPages.Remove(tabControl1.TabPages[1]);
+                tabControl1.TabPages.Remove(tabControl1.TabPages[1]);
                 TablaSimbolos.TablaSimbolos.Limpiar();
                 TablaDummys.Limpiar();
+                TablaLiterales.Limpiar();
+                TablaPalabrasReservadas.Limpiar();
                 GestorErrores.BorrarTablaErrores();
             }
         }
@@ -274,6 +329,11 @@ namespace Compilador
             BorrarPestañas();
             registroCarga.Clear();
             textBoxRuta.Clear();     
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

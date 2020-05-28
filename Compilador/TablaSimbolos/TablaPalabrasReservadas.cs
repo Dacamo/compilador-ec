@@ -18,8 +18,8 @@ namespace Compilador.TablaSimbolos
             tabla.Add("OFF", ComponenteLexico.crear("OFF", Categoria.PALABRA_RESERVADA_OFF));
             tabla.Add("SHUTDOWN", ComponenteLexico.crear("SHUTDOWN", Categoria.PALABRA_RESERVADA_SHUTDOWN));
             tabla.Add("IN", ComponenteLexico.crear("IN", Categoria.PALABRA_RESERVADA_IN));
-            tabla.Add("RANKINE", ComponenteLexico.crear("RANKINE", Categoria.PALABRA_RESERVADA_RANKINE));
-            tabla.Add("FARENHEIT", ComponenteLexico.crear("FARENHEIT", Categoria.PALABRA_RESERVADA_FARENHEIT));
+            tabla.Add("R", ComponenteLexico.crear("RANKINE", Categoria.PALABRA_RESERVADA_RANKINE));
+            tabla.Add("F", ComponenteLexico.crear("FARENHEIT", Categoria.PALABRA_RESERVADA_FARENHEIT));
             tabla.Add("FAIL", ComponenteLexico.crear("FAIL", Categoria.PALABRA_RESERVADA_FAIL));
             tabla.Add("RESTART", ComponenteLexico.crear("RESTART", Categoria.PALABRA_RESERVADA_RESTART));
             tabla.Add("SUCCESS", ComponenteLexico.crear("SUCCESS", Categoria.PALABRA_RESERVADA_SUCCESS));
@@ -29,8 +29,8 @@ namespace Compilador.TablaSimbolos
             tabla.Add("DOWN", ComponenteLexico.crear("DOWN", Categoria.PALABRA_RESERVADA_DOWN));
             tabla.Add("UP", ComponenteLexico.crear("UP", Categoria.PALABRA_RESERVADA_UP));
             tabla.Add("OUT", ComponenteLexico.crear("OUT", Categoria.PALABRA_RESERVADA_OUT));
-            tabla.Add("CENTIGRADOS", ComponenteLexico.crear("CENTIGRADOS", Categoria.PALABRA_RESERVADA_CENTIGRADOS));
-            tabla.Add("KELVIN", ComponenteLexico.crear("KELVIN", Categoria.PALABRA_RESERVADA_KELVIN));
+            tabla.Add("C", ComponenteLexico.crear("CENTIGRADOS", Categoria.PALABRA_RESERVADA_CENTIGRADOS));
+            tabla.Add("K", ComponenteLexico.crear("KELVIN", Categoria.PALABRA_RESERVADA_KELVIN));
 
             //agregar 
         }

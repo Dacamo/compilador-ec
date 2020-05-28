@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalizadorLexico\AnalizadorLexico.cs" />
+    <Compile Include="AnalizadorSintactico\AnalizadorSintactico.cs" />
     <Compile Include="Clases\Entrada.cs" />
     <Compile Include="Clases\Linea.cs" />
     <Compile Include="Form1.cs">

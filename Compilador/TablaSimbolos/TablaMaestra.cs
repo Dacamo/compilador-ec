@@ -8,7 +8,11 @@ namespace Compilador.TablaSimbolos
         {
             if (componente != null)
             {
-                TablaPalabrasReservadas.ValidarSiEsPalabraReservada(componente);
+                if(componente.Tipo != TipoComponente.DUMMY)
+                {
+                    TablaPalabrasReservadas.ValidarSiEsPalabraReservada(componente);
+                }
+                
 
                 switch (componente.Tipo)
                 {

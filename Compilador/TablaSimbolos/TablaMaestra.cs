@@ -8,11 +8,15 @@ namespace Compilador.TablaSimbolos
         {
             if (componente != null)
             {
-                if(componente.Tipo != TipoComponente.DUMMY)
-                {
-                    TablaPalabrasReservadas.ValidarSiEsPalabraReservada(componente);
-                }
+                var esDummy = false;
+               if(componente.Tipo == TipoComponente.DUMMY)
+               {
+                    TablaDummys.Agregar(componente);
+                    esDummy = true;
+                    
+               }
                 
+                TablaPalabrasReservadas.ValidarSiEsPalabraReservada(componente);
 
                 switch (componente.Tipo)
                 {
@@ -30,12 +34,12 @@ namespace Compilador.TablaSimbolos
                             TablaLiterales.Agregar(componente);
                         }
                         break;
-                    case TipoComponente.DUMMY:
-                        TablaDummys.Agregar(componente);
-                        break;
 
                     case TipoComponente.PALABRA_RESERVADA:
-                        TablaPalabrasReservadas.Agregar(componente);
+                        if (!esDummy)
+                        {
+                            TablaPalabrasReservadas.Agregar(componente);
+                        }                      
                         break;
                 }
             }

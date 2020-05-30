@@ -242,75 +242,8 @@ namespace Compilador
             FormarTrazaSalida(posicion, "UNIDADMEDIDA");
         }
 
-        //<RESPUESTAS>:= SUCCESS|FAIL
-        public void Respuestas(string posicion)
-        {
-            posicion = posicion + "----";
-            FormarTrazaEntrada(posicion, "RESPUESTAS");
-
-            if (Categoria.PALABRA_RESERVADA_SUCCESS.Equals(componente.Categoria))
-            {
-                LeerSiguienteComponente();
-            }
-            else if (Categoria.PALABRA_RESERVADA_FAIL.Equals(componente.Categoria))
-            {
-                LeerSiguienteComponente();
-            }
-            else
-            {
-                //Reportar Error sintáctico
-                Error error = Error.CrearErrorSintatico(
-                       componente.Lexema,
-                       componente.Categoria,
-                       componente.NumeroLinea,
-                       componente.PosicionInicial,
-                       componente.PosicionFinal,
-                       "Componente no válido en la ubicación actual", "Leí " + componente.Categoria + ":" + componente.Lexema + " y esperaba un SUCCESS o FAIL",
-                       "asegurese que el caracter que se encuentra en la posicion actual sea SUCCESS o FAIL");
-                GestorErrores.Reportar(error);
-
-            }
-
-            FormarTrazaSalida(posicion, "RESPUESTAS");
-        }
-
-        //<SOLICITUDES>:= START|STATUS|SHUTDOWN|RESTART
-        public void Solicitudes(string posicion)
-        {
-            posicion = posicion + "----";
-            FormarTrazaEntrada(posicion, "SOLICITUDES");
-            if (Categoria.PALABRA_RESERVADA_START.Equals(componente.Categoria))
-            {
-                LeerSiguienteComponente();
-            }
-            else if (Categoria.PALABRA_RESERVADA_STATUS.Equals(componente.Categoria))
-            {
-                LeerSiguienteComponente();
-            }
-            else if (Categoria.PALABRA_RESERVADA_SHUTDOWN.Equals(componente.Categoria))
-            {
-                LeerSiguienteComponente();
-            }
-            else if (Categoria.PALABRA_RESERVADA_RESTART.Equals(componente.Categoria))
-            {
-                LeerSiguienteComponente();
-            }
-            else
-            {
-                //Reportar Error sintáctico
-                Error error = Error.CrearErrorSintatico(
-                       componente.Lexema,
-                       componente.Categoria,
-                       componente.NumeroLinea,
-                       componente.PosicionInicial,
-                       componente.PosicionFinal,
-                       "Componente no válido en la ubicación actual", "Leí " + componente.Categoria + ":" + componente.Lexema + " y esperaba un START, SHUTDOWN; RESTART, STATUS",
-                       "asegurese que el caracter que se encuentra en la posicion actual sea START, SHUTDOWN; RESTART, STATUS");
-                GestorErrores.Reportar(error);
-            }
-
-            FormarTrazaSalida(posicion, "SOLICITUDES");
-        }
+ 
+       
         //<CAMBIARTEMPERATURA>:= UP|DOWN
         public void CambiarTemperatura(string posicion)
         {

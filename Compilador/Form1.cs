@@ -181,6 +181,11 @@ namespace Compilador
             }
             catch(Exception ex)
             {
+                CrearPestañaDeComponentes();
+                CrearPestañaDeErrores();
+                CrearPestañaDePalabrasReservadas();
+                CrearPestañaDeLiterales();
+                Entrada.LimpiarLineas();
                 MessageBox.Show(ex.Message);
             }
         }

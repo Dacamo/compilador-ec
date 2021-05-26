@@ -77,6 +77,6 @@ Un sensor de temperatura tiene la capacidad de constantemente de enviar datos a 
 
 
 
-## AUTOMÁTA
+## AUTÓMATA
 
 
